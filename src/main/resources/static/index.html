@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luminous Morocco Tours AI</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Luminous Morocco Tours AI Hub</h1>
+    </header>
+
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab('chat')">Knowledge Assistant</div>
+            <div class="tab" onclick="switchTab('blog')">Blog Generator</div>
+        </div>
+
+        <!-- Chat Interface -->
+        <div id="chat" class="content active">
+            <div id="chat-history"></div>
+            <div class="input-group">
+                <input type="text" id="chat-input" placeholder="Ask about tours, the owner, or Morocco..."
+                    onkeypress="handleEnter(event)">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
+        <!-- Blog Interface -->
+        <div id="blog" class="content">
+            <div class="input-group">
+                <input type="text" id="blog-topic"
+                    placeholder="Enter blog topic (e.g., 'Luxury Desert Tour vs Standard')">
+                <button onclick="generateBlog()" id="generate-btn">Generate Blog</button>
+            </div>
+            <div class="loading" id="blog-loading">Generating masterpiece... This may take a minute...</div>
+            <div id="blog-result"></div>
+        </div>
+    </div>
+</body>
+
+</html>
