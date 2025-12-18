@@ -2,9 +2,17 @@ package com.luminousmoroccotours.rag.services;
 
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
-import dev.langchain4j.service.spring.AiService;
 
-@AiService
+/**
+ * Blog Service (Generator) - Connected ONLY to Strategy Store.
+ * 
+ * This service generates SEO-optimized blog posts with strategic voice.
+ * It retrieves information EXCLUSIVELY from the embeddings_strategy table,
+ * which contains strategy documents and competitor analysis PDFs.
+ * 
+ * STRATEGIC ACCESS: This service CAN see competitor analysis, style guides,
+ * and strategic documents to write better differentiated content.
+ */
 public interface BlogService {
 
     @SystemMessage("""

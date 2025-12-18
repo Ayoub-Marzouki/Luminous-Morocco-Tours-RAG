@@ -1,0 +1,67 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#ffffff" />
+  
+  <!-- Definitions for arrows -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+
+  <!-- User Layer -->
+  <rect x="350" y="20" width="100" height="40" rx="5" fill="#f0f4f8" stroke="#333" stroke-width="2" />
+  <text x="400" y="45" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">User</text>
+
+  <!-- Controller Layer -->
+  <rect x="325" y="90" width="150" height="40" rx="5" fill="#e1f5fe" stroke="#01579b" stroke-width="2" />
+  <text x="400" y="115" font-family="Arial" font-size="14" text-anchor="middle">API Controllers</text>
+
+  <!-- Arrows from User to Controller -->
+  <line x1="400" y1="60" x2="400" y2="85" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Services Layer -->
+  <!-- RagService -->
+  <rect x="150" y="170" width="200" height="60" rx="10" fill="#bbdefb" stroke="#1976d2" stroke-width="2" />
+  <text x="250" y="195" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">RagService</text>
+  <text x="250" y="215" font-family="Arial" font-size="12" text-anchor="middle" fill="#555">(Chatbot Assistant)</text>
+
+  <!-- BlogService -->
+  <rect x="450" y="170" width="200" height="60" rx="10" fill="#c8e6c9" stroke="#388e3c" stroke-width="2" />
+  <text x="550" y="195" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">BlogService</text>
+  <text x="550" y="215" font-family="Arial" font-size="12" text-anchor="middle" fill="#555">(SEO Blog Generator)</text>
+
+  <!-- Arrows from Controller to Services -->
+  <path d="M350 130 L250 165" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <path d="M450 130 L550 165" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Database Subgraph -->
+  <rect x="50" y="270" width="700" height="120" rx="15" fill="none" stroke="#999" stroke-dasharray="5,5" />
+  <text x="65" y="290" font-family="Arial" font-size="12" font-style="italic" fill="#666">Vector Database (PostgreSQL + pgvector)</text>
+
+  <!-- Fact Store -->
+  <rect x="150" y="310" width="200" height="50" rx="5" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" />
+  <text x="250" y="330" font-family="Arial" font-size="13" text-anchor="middle" font-weight="bold">embeddings_facts</text>
+  <text x="250" y="350" font-family="Arial" font-size="11" text-anchor="middle" fill="#555">(Ground Truth / HTMLs)</text>
+
+  <!-- Strategy Store -->
+  <rect x="450" y="310" width="200" height="50" rx="5" fill="#f1f8e9" stroke="#388e3c" stroke-width="2" />
+  <text x="550" y="330" font-family="Arial" font-size="13" text-anchor="middle" font-weight="bold">embeddings_strategy</text>
+  <text x="550" y="350" font-family="Arial" font-size="11" text-anchor="middle" fill="#555">(Internal Strategy / PDFs)</text>
+
+  <!-- Arrows to DB -->
+  <line x1="250" y1="230" x2="250" y2="305" stroke="#1976d2" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="550" y1="230" x2="550" y2="305" stroke="#388e3c" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Data Sources -->
+  <rect x="175" y="430" width="150" height="40" rx="5" fill="#fff3e0" stroke="#ef6c00" stroke-width="1" />
+  <text x="250" y="455" font-family="Arial" font-size="12" text-anchor="middle">Website HTMLs</text>
+
+  <rect x="475" y="430" width="150" height="40" rx="5" fill="#fff3e0" stroke="#ef6c00" stroke-width="1" />
+  <text x="550" y="455" font-family="Arial" font-size="12" text-anchor="middle">Strategy PDFs</text>
+
+  <!-- Connection to sources -->
+  <line x1="250" y1="430" x2="250" y2="360" stroke="#ef6c00" stroke-width="1" stroke-dasharray="2,2" />
+  <line x1="550" y1="430" x2="550" y2="360" stroke="#ef6c00" stroke-width="1" stroke-dasharray="2,2" />
+
+</svg>

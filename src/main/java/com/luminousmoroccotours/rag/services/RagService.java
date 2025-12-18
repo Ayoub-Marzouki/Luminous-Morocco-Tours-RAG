@@ -1,10 +1,17 @@
 package com.luminousmoroccotours.rag.services;
 
 import dev.langchain4j.service.SystemMessage;
-import dev.langchain4j.service.spring.AiService;
 
-
-@AiService
+/**
+ * RAG Service (Chatbot) - Connected ONLY to Facts Store.
+ * 
+ * This service answers factual questions about Luminous Morocco Tours.
+ * It retrieves information EXCLUSIVELY from the embeddings_facts table,
+ * which contains ONLY the company website HTMLs.
+ * 
+ * ISOLATION GUARANTEE: This service CANNOT see competitor analysis or strategy PDFs.
+ * When you ask "Who is the owner?", it can only retrieve from website data.
+ */
 public interface RagService {
 
     @SystemMessage("""
